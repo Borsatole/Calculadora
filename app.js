@@ -2,6 +2,7 @@ var valor = document.querySelector("#search");
 var btn_simular = document.querySelector("#btn_simular");
 var btn_whatsapp = document.querySelector("#botao_enviar");
 var parcelas = document.querySelector("#parcelas");
+var tabela = document.querySelector("table");
 
 // Mapeamento de taxas de parcelamento
 var taxasParcelamento = {
@@ -26,7 +27,7 @@ btn_simular.addEventListener('click', (event) => {
     } else {
         event.preventDefault();
         pegarValor();
-        
+        tirarblur();
     }
 
     
@@ -38,9 +39,13 @@ function pegarValor() {
     printar(Math.ceil(parseFloat(valor.value))); // Converte o valor para número e arredonda para cima
 }
 
+//TIRAR O BLUR 
+function tirarblur() {
+    tabela.style.filter = "blur(0px)";
+}
+
 // PRINTAR NA TELA
-var mensagem = `*SIMULAÇÃO CARTÃO DE CRÉDITO*
-    `
+var mensagem = `*SIMULAÇÃO NO CARTÃO DE CRÉDITO*`
 function printar(valor) {
 
     var total_parcelas = 13;
@@ -66,20 +71,24 @@ function printar(valor) {
         </tr>`;
 
         mensagem += `
-        ✅${i}X R$${valorParcela.toFixed(2).replace(".",",")}`
-    }
+✅${i}X R$${valorParcela.toFixed(2).replace(".",",")}`
+}
 
-    //console.log(mensagem);
+    // console.log(mensagem);
 
     
 }
 
 btn_whatsapp.addEventListener("click", ()=>{
+
+    if (valor.value == "" || isNaN(valor.value)) {
+        alert("digite um valor certo")
+    } else {
     navigator.clipboard.writeText(mensagem).then(function() {
-        //console.log('Texto copiado com sucesso!');
+    // console.log('Texto copiado com sucesso!');
         // Aqui você pode adicionar algum feedback ao usuário, como uma mensagem de sucesso.
     }).catch(function(error) {
         //console.error('Erro ao copiar o texto: ', error);
         // Aqui você pode adicionar algum feedback ao usuário, como uma mensagem de erro.
-    });
+    });}
 })

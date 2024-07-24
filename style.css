@@ -7,6 +7,7 @@ body{
 
 
 main {
+    max-width: 800px;
     width: 95%;
     margin: 0 auto;
     display: flex;
@@ -29,9 +30,9 @@ main {
     gap: 0.5rem;
 }
 
-/* table {
+table {
     filter: blur(2px);
-} */
+}
 
 .bg-blue-700 {
     --tw-bg-opacity: 1;
