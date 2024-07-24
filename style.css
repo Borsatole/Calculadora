@@ -1,0 +1,64 @@
+body{
+    display: flex;
+    margin-top: 2rem;
+    justify-content: center;
+    
+}
+
+
+main {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 90vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap:0.5rem;
+}
+
+#botao_enviar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* table {
+    filter: blur(2px);
+} */
+
+.bg-blue-700 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(163 0 0);
+}
+
+.bg-blue-700:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(126, 0, 0);
+}
+
+.focus\:ring-blue-500:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgb(248 63 63);
+}
+.focus\:border-blue-500:focus {
+    --tw-border-opacity: 1;
+    border-color: rgb(255 0 0);
+}
+
+
+.focus\:ring-blue-300:focus {
+    --tw-ring-opacity: 1;
+    --tw-ring-color: rgba(248, 63, 63, 0.397);
+}
+
+
+.tamanho {
+    height: 70%;
+}
