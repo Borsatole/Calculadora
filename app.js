@@ -23,7 +23,20 @@ var taxasParcelamento = {
 btn_simular.addEventListener('click', (event) => {
 
     if (valor.value == "" || isNaN(valor.value)) {
-        alert("digite um valor certo")
+        Toastify({
+            text: "Digite um valor válido!!",
+            duration: 2000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#960000",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+
     } else {
         event.preventDefault();
         pegarValor();
@@ -82,9 +95,36 @@ function printar(valor) {
 btn_whatsapp.addEventListener("click", ()=>{
 
     if (valor.value == "" || isNaN(valor.value)) {
-        alert("digite um valor certo")
+        Toastify({
+            text: "Digite um valor válido!!",
+            duration: 2000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#960000",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
     } else {
     navigator.clipboard.writeText(mensagem).then(function() {
+
+        Toastify({
+            text: "Texto copiado com sucesso!",
+            duration: 2000,
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "center", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "#169600",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
+
     // console.log('Texto copiado com sucesso!');
         // Aqui você pode adicionar algum feedback ao usuário, como uma mensagem de sucesso.
     }).catch(function(error) {
