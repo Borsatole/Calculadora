@@ -109,6 +109,7 @@ btn_whatsapp.addEventListener("click", ()=>{
             onClick: function(){} // Callback after click
           }).showToast();
     } else {
+    navigator.clipboard.writeText("")
     navigator.clipboard.writeText(mensagem).then(function() {
 
         Toastify({
