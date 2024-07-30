@@ -31,7 +31,7 @@ main {
 }
 
 table {
-    filter: blur(2px);
+    filter: blur(0px);
 }
 
 .bg-blue-700 {
